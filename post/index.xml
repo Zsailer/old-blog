@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on signal in the noise</title>
-    <link>http://localhost:1313/post/</link>
+    <link>http://Zsailer.github.io/post/</link>
     <description>Recent content in Posts on signal in the noise</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,14 +10,14 @@
     
     
     <lastBuildDate>Wed, 28 Jan 2015 11:27:59 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://Zsailer.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Launching your own Git Server</title>
-      <link>http://localhost:1313/post/Launching%20your%20own%20Git%20Server/</link>
+      <link>http://zsailer.github.io/post/Launching%20your%20own%20Git%20Server/</link>
       <pubDate>Wed, 28 Jan 2015 11:27:59 -0800</pubDate>
       
-      <guid>http://localhost:1313/post/Launching%20your%20own%20Git%20Server/</guid>
+      <guid>http://zsailer.github.io/post/Launching%20your%20own%20Git%20Server/</guid>
       <description>
 
 &lt;p&gt;In this post, I will show how to host a Git on your own server. It&amp;rsquo;s like hosting your own local version of &lt;a href=&#34;https://github.com/&#34;&gt;Github&lt;/a&gt;, that you specifically manage traffic or host the data. In fact, I&amp;rsquo;ll show how to incorporate a GUI interface to this setup, called &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt;, to make the interface simpler for non-programmer users.&lt;/p&gt;
@@ -101,78 +101,11 @@ $ git push origin master
     </item>
     
     <item>
-      <title>Scientific IPython Hacking Workflow</title>
-      <link>http://localhost:1313/post/Scientific%20IPython%20Hacking%20Workflow/</link>
-      <pubDate>Mon, 26 Jan 2015 21:05:19 -0800</pubDate>
-      
-      <guid>http://localhost:1313/post/Scientific%20IPython%20Hacking%20Workflow/</guid>
-      <description>&lt;p&gt;This is an overview of how I hack in Python.&lt;/p&gt;
-
-&lt;p&gt;&lt;div tabindex=&#34;-1&#34; id=&#34;notebook&#34; class=&#34;border-box-sizing&#34;&gt;
-    &lt;div class=&#34;container&#34; id=&#34;notebook-container&#34;&gt;&lt;/p&gt;
-
-&lt;div class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;
-&lt;div class=&#34;prompt input_prompt&#34;&gt;
-&lt;/div&gt;
-&lt;div class=&#34;inner_cell&#34;&gt;
-&lt;div class=&#34;text_cell_render border-box-sizing rendered_html&#34;&gt;
-&lt;p&gt;This is always in my first cell&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;cell border-box-sizing code_cell rendered&#34;&gt;
-&lt;div class=&#34;input&#34;&gt;
-&lt;div class=&#34;prompt input_prompt&#34;&gt;In&amp;nbsp;[1]:&lt;/div&gt;
-&lt;div class=&#34;inner_cell&#34;&gt;
-    &lt;div class=&#34;input_area&#34;&gt;
-&lt;div class=&#34; highlight hl-ipython2&#34;&gt;&lt;pre&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;matplotlib&lt;/span&gt; inline
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;numpy&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;np&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;plt&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;IPython.html.widgets&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interact&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;div class=&#34;cell border-box-sizing text_cell rendered&#34;&gt;
-&lt;div class=&#34;prompt input_prompt&#34;&gt;
-&lt;/div&gt;
-&lt;div class=&#34;inner_cell&#34;&gt;
-&lt;div class=&#34;text_cell_render border-box-sizing rendered_html&#34;&gt;
-&lt;p&gt;This is a test&lt;/p&gt;
-$$
-\int x^{2} dx
-$$
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;cell border-box-sizing code_cell rendered&#34;&gt;
-&lt;div class=&#34;input&#34;&gt;
-&lt;div class=&#34;prompt input_prompt&#34;&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
-&lt;div class=&#34;inner_cell&#34;&gt;
-    &lt;div class=&#34;input_area&#34;&gt;
-&lt;div class=&#34; highlight hl-ipython2&#34;&gt;&lt;pre&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Let&#39;s Begin</title>
-      <link>http://localhost:1313/post/Let%27s%20Begin/</link>
+      <link>http://zsailer.github.io/post/Let%27s%20Begin/</link>
       <pubDate>Sat, 24 Jan 2015 17:50:21 -0800</pubDate>
       
-      <guid>http://localhost:1313/post/Let%27s%20Begin/</guid>
+      <guid>http://zsailer.github.io/post/Let%27s%20Begin/</guid>
       <description>
 
 &lt;h2 id=&#34;this-tells-it-all:3af354191679b595c8ea39f79cc1c8bc&#34;&gt;This tells it all&amp;hellip;&lt;/h2&gt;
@@ -181,7 +114,7 @@ $$
 
 &lt;p&gt;I&amp;rsquo;m hoping this blog becomes a resource of useful information/tutorials/explanations for scientists and programmers.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/xkcd979.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://Zsailer.github.io/images/xkcd979.png&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
