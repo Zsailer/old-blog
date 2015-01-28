@@ -1,0 +1,158 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Launching your own Git Server &middot; signal in the noise </title>
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/lightGallery.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/ipython_notebook.css" />
+    
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:1313/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="signal in the noise" />
+    
+    <script src="http://localhost:1313/js/jquery.min.js"></script>
+    <script src="http://localhost:1313/js/main.js">
+    </script>
+</head>
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-bars btn-mobile-menu__icon"></i>
+        <i class="fa fa-times btn-mobile-close__icon hidden"></i>
+    </span>
+<header class="panel-cover panel-cover--collapsed"  style="background-image: url(/images/ithink.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="http://localhost:1313" title="link to homepage for signal in the noise">signal in the noise</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  sharing snippets of information i&#39;ve found useful, interesting, or amusing.  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="http://localhost:1313/#blog" title="link to signal in the noise blog" class="blog-button">Blog</a> </li>
+                            </br>  </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/zrsailer" title="@zrsailer on Twitter"> <i class='fa fa-tt'></i> <span class="label">Twitter</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/Zsailer" title="Zsailer on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>    </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Launching your own Git Server</h1>
+          <span class="post-date">Wed, Jan 28, 2015</span>
+          
+
+<p>In this post, I will show how to host a Git on your own server. It&rsquo;s like hosting your own local version of <a href="https://github.com/">Github</a>, that you specifically manage traffic or host the data. In fact, I&rsquo;ll show how to incorporate a GUI interface to this setup, called <a href="https://about.gitlab.com/">GitLab</a>, to make the interface simpler for non-programmer users.</p>
+
+<p>This is <strong>GREAT</strong> for <em>science research groups</em> who are creating computational analysis, science software, or machine code that are used in collaborations inside and outside of their lab. In fact, that&rsquo;s exactly why I&rsquo;m using this. There is a clean, standardized version of the code that group members can clone and branch from. It&rsquo;s much easier to manage the project with Git.</p>
+
+<p>Also, this avoids using completely public Git servers like Github, where your code is availabe to the public. Though I&rsquo;m all about open science, open source, and reproducibility, there are times (specifically in Academia, unfortunately) where hacking together privately is appropriate.</p>
+
+<p><strong>NOTE:</strong> This guide is taken directly from Git&rsquo;s documentation, but hopefully provides a simpler (and faster) set of directions for this solution to hosting your own server.</p>
+
+<p>Some of the authentication logistics is relatively hands-on for you as the admin. This leads to better security, since you are required to personally grant access to users.</p>
+
+<h2 id="prepping-the-server:d4080c21c2f73c52b2cc215902d73a1f">Prepping the server</h2>
+
+<p><em>This post assumes you have sudo permissions to the server.</em> You are going to create a new user on this server that will host the collaborative Git repositories and allow <em>only</em> system users to perform Git actions (clone, push, pull, branch, etc.) on these repositories. System users will only be able to access this user&rsquo;s directory through Git.</p>
+
+<p>Let&rsquo;s begin:</p>
+
+<p>Create the Git user</p>
+
+<pre><code>$ sudo adduser git
+</code></pre>
+
+<p>This will ask you for a password; it&rsquo;s up to you whether you want this to be password protected.</p>
+
+<p>Now, we&rsquo;re going to want to allow access to users on the system, using some form of authentication.</p>
+
+<h2 id="ssh-public-keys:d4080c21c2f73c52b2cc215902d73a1f">SSH public keys</h2>
+
+<p>Authentication is important when allowing users to access a private server. In this example, our server is a private local server, so we use the SSH protocol (fancy word for a standard procedure) to handle this. As the admin, you&rsquo;ll manage user access to this server by storing authetication keys for each user. Let&rsquo;s create this folder:</p>
+
+<pre><code>$ su git
+$ cd
+$ mkdir .ssh &amp;&amp; chmod 700 .ssh
+$ touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh.authorized_keys
+</code></pre>
+
+<p>Authentication is confirmed using the SSH public key, so let&rsquo;s make sure all users have one of these. These keys are held in the hidden <code>ssh</code> folder:</p>
+
+<pre><code>$ cd ~/.ssh
+</code></pre>
+
+<p>We&rsquo;re looking for two files: <code>id_rsa</code> (or <code>id_dsa</code>) and <code>id_rsa.pub</code> (or<code>id_dsa.pub</code>).</p>
+
+<p>If you don&rsquo;t have these files, you can generate them by typing:</p>
+
+<pre><code>$ ssh-keygen
+</code></pre>
+
+<p>It confirms a directory path to hold the key and asks for a password (you can leave this blank if you choose).</p>
+
+<p><strong>Every user must have a SSH public key.</strong></p>
+
+<p>Each user needs to send you (the server admin) the contents of <code>id_rsa.pub</code>.</p>
+
+<h2 id="add-an-authorized-user:d4080c21c2f73c52b2cc215902d73a1f">Add an authorized User</h2>
+
+<p>Once you have their public key (contents in <code>id_rsa.pub</code>), simply append everything in that file to the <code>authorized_keys</code> file in the hidden folder <code>.ssh</code>.</p>
+
+<h2 id="start-a-project:d4080c21c2f73c52b2cc215902d73a1f">Start a project</h2>
+
+<p><strong>The admin must always manually create a bare Git repository for each project before it can be hosted there.</strong> Simply login as the new user, and type (assuming <code>&lt;project_name&gt;</code> is whatever you name the project):</p>
+
+<pre><code>$ mkdir &lt;project_name&gt;.git
+$ cd &lt;project_name&gt;.git
+$ git init --bare
+</code></pre>
+
+<p>Then, an authenticated user can create that project on their own computer, add this remote server host (<code>&lt;server&gt;</code> in the code below) to their repo, and push changes:</p>
+
+<pre><code>$ cd &lt;project_name&gt;
+$ git init
+$ git add .
+$ git commit -m 'initial commit'
+$ git remote add origin git@&lt;server&gt;:&lt;project_name&gt;.git
+$ git push origin master
+</code></pre>
+
+<p>while other authorized users can clone, pull and branch from the project.</p>
+
+        </div>
+        <section class="post-comments">
+<a class="muut" href="https://muut.com/i//comments:Launching%20your%20own%20Git%20Server">Comments</a>
+<script src="//cdn.muut.com/1/moot.min.js"></script>
+</section>
+
+      </div>
+    </div>
+  </body>
+  
+</html>
