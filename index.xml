@@ -93,29 +93,6 @@
     </item>
     
     <item>
-      <title>How I use IPython (Jupyter) Notebooks everyday</title>
-      <link>http://zsailer.github.io/post/How%20I%20use%20IPython%20%28Jupyter%29%20Notebooks%20everyday/</link>
-      <pubDate>Tue, 03 Mar 2015 15:14:45 -0800</pubDate>
-      
-      <guid>http://zsailer.github.io/post/How%20I%20use%20IPython%20%28Jupyter%29%20Notebooks%20everyday/</guid>
-      <description>&lt;p&gt;The Jupyter (IPython) notebook is an awesome tool. (Skip to section below to hear about how awesome!)&lt;/p&gt;
-
-&lt;p&gt;I thought it might be useful to demostrate how one might go about using the notebook for everyday research. Unfortunately, I&amp;rsquo;ve found many scientists intimidated to try the notebook because they don&amp;rsquo;t know where to start.&lt;/p&gt;
-
-&lt;p&gt;Also, let me say this: you don&amp;rsquo;t have to a Python programmer to use the Notebook. If you like R, fine. Check out the IRKernel (link). If you are an engineer/physicists (as I am) Matlab or Octave might be your language. Cool, here you go!&lt;/p&gt;
-
-&lt;p&gt;These include:
-* Plotting inline (via Matplotlib)
-* Markdown and Latex syntax
-* Widgets (interacting with plots and variables using graphical user interaces.)&lt;/p&gt;
-
-&lt;p&gt;The Jupyter (IPython) Notebook is an incredible tool to use inside and outside academia. In fact, I would argue, anyone who programs to process and share data/information should be using the Jupyter notebook. The recent decision by the core team to make the notebook completely language agnostic and the development of many language kernels, there is no excuse not to use it.&lt;/p&gt;
-
-&lt;p&gt;If you aren&amp;rsquo;t convinced by the unifying of many languages under a single interactive programming shell, then maybe their future (and current development) direction will attract you.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Launching your own Git Server</title>
       <link>http://zsailer.github.io/post/Launching%20your%20own%20Git%20Server/</link>
       <pubDate>Wed, 28 Jan 2015 11:27:59 -0800</pubDate>
