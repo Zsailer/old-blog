@@ -22,22 +22,24 @@
 
 &lt;h1 id=&#34;the-jupyter-notebook:1474e86c3d1a98e0f9d005dde1de2301&#34;&gt;The Jupyter Notebook&lt;/h1&gt;
 
-&lt;p&gt;The practice of reproducible/open science makes every step of the scientific process for particular publication easily accessible, repeatable, and open for discussion. This implies that the procedure, the raw data, the processing code, and the plot-generating code are freely available, commented for understanding, and polished for sanity. Anyone interested in reviewing your material should easily follow your pipeline and be able to reproduce your output.&lt;/p&gt;
+&lt;p&gt;The practice of reproducible/open science makes every step of your scientific research easily accessible, repeatable, and open for discussion. This implies that the procedure, the raw data, the processing code, and the plot-generating code are freely available, commented for understanding, and polished for sanity. Anyone interested in reviewing your material should easily follow your pipeline and be able to reproduce your output.&lt;/p&gt;
 
-&lt;p&gt;This sounds like a ton of overhead work. Most of the time, the analysis of data is a bit half-hazard. We do a quick hack to plot results ASAP, so we can begin thinking about our interpretations and publication. We certainly do not want anyone else to see that ugly script we wrote in R to parse some files. And, we definitely do not want them to try and use it! And, we do not have the time to go back and clean up all these files and scripts we used for that one paper three years ago. Its not laziness; its trully the lack of time. We need a solution that will help us practice reproducibility on the fly; a tool where we can still hack, but others can still follow along.&lt;/p&gt;
+&lt;p&gt;This sounds like a ton of overhead work. Most of the time, the analysis of data is a bit half-hazard. We do a quick hack to plot results ASAP, so we can begin thinking about our interpretations and publication. We certainly do not want anyone else to see that ugly script we wrote in R to parse some files. And, we definitely do not want them to try and use it!&lt;/p&gt;
+
+&lt;p&gt;We do not have the time to go back and clean up all these files and scripts we used for that one paper three years ago. Its not laziness; its truly the lack of time. We need a solution that will help us practice reproducibility on the fly; a tool where we can still hack, but others can still follow along.&lt;/p&gt;
 
 &lt;p&gt;The Jupyter Notebook project (previously called IPython) provides an impressive solution. The Jupyter Notebook is stable, language agnostic electronic notebook. There have been a few attempts at creating an electronic notebook in recent years, none stand up the IPython Community. &lt;a href=&#34;https://try.jupyter.org&#34;&gt;Try it out for yourself!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;how-does-an-electronic-notebook-need:1474e86c3d1a98e0f9d005dde1de2301&#34;&gt;How does an electronic notebook need?&lt;/h2&gt;
+&lt;h2 id=&#34;what-would-an-electronic-notebook-need-to-have-for-me:1474e86c3d1a98e0f9d005dde1de2301&#34;&gt;What would an electronic notebook need to have for me?&lt;/h2&gt;
 
-&lt;p&gt;This section compiles a list of things that are necessary for an electronic notebook to be helpful.&lt;/p&gt;
+&lt;p&gt;This section compiles a list of things that I believe are necessary for an electronic notebook to be useful.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Low costs for a lab&lt;/li&gt;
-&lt;li&gt;Run code within notebook (but what language?)&lt;/li&gt;
-&lt;li&gt;Word processor or Mark-up text for publications or notes.&lt;/li&gt;
-&lt;li&gt;Equations in the text. (After all, this is a science notebook.)&lt;/li&gt;
-&lt;li&gt;Plots in the notebook, below the code that generated it?&lt;/li&gt;
+&lt;li&gt;Low costs for a full lab to use&lt;/li&gt;
+&lt;li&gt;Run code within the notebook document (but what language?)&lt;/li&gt;
+&lt;li&gt;Word processor or Mark-up text for creating a narrative between the data/analysis,&lt;/li&gt;
+&lt;li&gt;Equations must be easily inserted in the text. (After all, this is a science notebook.)&lt;/li&gt;
+&lt;li&gt;Plots displayed inline with the notebook, below the code that generated it?&lt;/li&gt;
 &lt;li&gt;Easy to use&lt;/li&gt;
 &lt;li&gt;Conversion to blogs, PDF, slides, etc.&lt;/li&gt;
 &lt;li&gt;Easy to share with anyone&lt;/li&gt;
@@ -49,9 +51,9 @@
 &lt;h2 id=&#34;jupyter-s-performance-as-an-electronic-notebook:1474e86c3d1a98e0f9d005dde1de2301&#34;&gt;Jupyter&amp;rsquo;s performance as an electronic notebook?&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Low cost? How about &lt;strong&gt;free&lt;/strong&gt;? Jupyter notebook is completely free and open source for anyone to use. Simply download here. As a bonus, the open source community around the Jupyter Notebook is highly active and passionate about the project, so it is getting better everyday.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Low cost? How about &lt;strong&gt;free&lt;/strong&gt;? Jupyter notebook is completely free and open source for anyone to use. Simply download &lt;a href=&#34;https://github.com/ipython/ipython/tree/3.x&#34;&gt;here&lt;/a&gt; or type &lt;code&gt;pip install ipython&lt;/code&gt;. As a bonus, the open source community around the Jupyter Notebook is highly active and passionate about the project, so it is getting better everyday.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Originally called IPython Notebook (the &amp;ldquo;I&amp;rdquo; standing for &lt;strong&gt;Interactive&lt;/strong&gt; Python notebook), the Jupyter notebook is, first and foremost, an interactive computing environment. It is comprised of &lt;em&gt;cells&lt;/em&gt; that enable the user to write chunks of code and run them separately from the rest of the notebook. What language? You choose! The notebook is a language-agnostic frontend that runs code cells through kernels connecting it to any backend. In fact, the rename to &lt;strong&gt;Jupyter&lt;/strong&gt; Notebook was in acknowledgement of this agnosticism, highlighting the three core languages (Julia, Python, and R). However, many other kernels exist (such as Matlab, Octave, Javascript, etc.); see the list here. This means, you only need to learn one interface/frontend no matter how many languages you know.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Originally called IPython Notebook (the &amp;ldquo;I&amp;rdquo; standing for &lt;strong&gt;Interactive&lt;/strong&gt; Python notebook), the Jupyter notebook is, first and foremost, an interactive computing environment. It is comprised of &lt;em&gt;cells&lt;/em&gt; that enable the user to write chunks of code and run them separately from the rest of the notebook. What language? You choose! The notebook is a language-agnostic frontend that runs code cells through kernels connecting it to any backend language. In fact, the rename to &lt;strong&gt;Jupyter&lt;/strong&gt; Notebook was in acknowledgement of this agnosticism, highlighting the three core languages (Julia, Python, and R). However, many other kernels exist (such as Matlab, Octave, Javascript, etc.); see the list &lt;a href=&#34;https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages&#34;&gt;here&lt;/a&gt;. This means, you only need to learn one interface/frontend no matter how many languages you know.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;The cells mentioned above can also be &lt;strong&gt;text&lt;/strong&gt; cells, rendered by Markdown. This is a lightweight mark-up language used in many blogging circles. Its &lt;strong&gt;very&lt;/strong&gt; easy to use and is explained further here. This almost makes the notebook a worthy blogging editor.&lt;/p&gt;&lt;/li&gt;
 
