@@ -1,0 +1,150 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Reproducible Electronic Notebooks &middot; signal in the noise </title>
+    
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link rel="stylesheet" type="text/css" href="http://zsailer.github.io/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://zsailer.github.io/css/lightGallery.css" />
+    <link rel="stylesheet" type="text/css" href="http://zsailer.github.io/css/ipython_notebook.css" />
+    
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://Zsailer.github.io/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://Zsailer.github.io/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="signal in the noise" />
+    
+    <script src="http://zsailer.github.io/js/jquery.min.js"></script>
+    <script src="http://zsailer.github.io/js/main.js">
+    </script>
+</head>
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-bars btn-mobile-menu__icon"></i>
+        <i class="fa fa-times btn-mobile-close__icon hidden"></i>
+    </span>
+<header class="panel-cover panel-cover--collapsed"  style="background-image: url(/images/ithink.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="http://zsailer.github.io" title="link to homepage for signal in the noise">signal in the noise</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  sharing snippets of information i&#39;ve found useful, interesting, or amusing.  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="http://Zsailer.github.io/#blog" title="link to signal in the noise blog" class="blog-button">Blog</a> </li>
+                            </br>  </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/zrsailer" title="@zrsailer on Twitter"> <i class='fa fa-tt'></i> <span class="label">Twitter</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/Zsailer" title="Zsailer on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>    </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Reproducible Electronic Notebooks</h1>
+          <span class="post-date">Fri, Apr 24, 2015</span>
+          
+
+<h1 id="the-jupyter-notebook:1474e86c3d1a98e0f9d005dde1de2301">The Jupyter Notebook</h1>
+
+<p>The practice of reproducible/open science makes every step of the scientific process for particular publication easily accessible, repeatable, and open for discussion. This implies that the procedure, the raw data, the processing code, and the plot-generating code are freely available, commented for understanding, and polished for sanity. Anyone interested in reviewing your material should easily follow your pipeline and be able to reproduce your output.</p>
+
+<p>This sounds like a ton of overhead work. Most of the time, the analysis of data is a bit half-hazard. We do a quick hack to plot results ASAP, so we can begin thinking about our interpretations and publication. We certainly do not want anyone else to see that ugly script we wrote in R to parse some files. And, we definitely do not want them to try and use it! And, we do not have the time to go back and clean up all these files and scripts we used for that one paper three years ago. Its not laziness; its trully the lack of time. We need a solution that will help us practice reproducibility on the fly; a tool where we can still hack, but others can still follow along.</p>
+
+<p>The Jupyter Notebook project (previously called IPython) provides an impressive solution. The Jupyter Notebook is stable, language agnostic electronic notebook. There have been a few attempts at creating an electronic notebook in recent years, none stand up the IPython Community. <a href="https://try.jupyter.org">Try it out for yourself!</a></p>
+
+<h2 id="how-does-an-electronic-notebook-need:1474e86c3d1a98e0f9d005dde1de2301">How does an electronic notebook need?</h2>
+
+<p>This section compiles a list of things that are necessary for an electronic notebook to be helpful.</p>
+
+<ol>
+<li>Low costs for a lab</li>
+<li>Run code within notebook (but what language?)</li>
+<li>Word processor or Mark-up text for publications or notes.</li>
+<li>Equations in the text. (After all, this is a science notebook.)</li>
+<li>Plots in the notebook, below the code that generated it?</li>
+<li>Easy to use</li>
+<li>Conversion to blogs, PDF, slides, etc.</li>
+<li>Easy to share with anyone</li>
+<li>Run on remote server</li>
+<li>Standardize across a lab</li>
+<li>Secure</li>
+</ol>
+
+<h2 id="jupyter-s-performance-as-an-electronic-notebook:1474e86c3d1a98e0f9d005dde1de2301">Jupyter&rsquo;s performance as an electronic notebook?</h2>
+
+<ol>
+<li><p>Low cost? How about <strong>free</strong>? Jupyter notebook is completely free and open source for anyone to use. Simply download here. As a bonus, the open source community around the Jupyter Notebook is highly active and passionate about the project, so it is getting better everyday.</p></li>
+
+<li><p>Originally called IPython Notebook (the &ldquo;I&rdquo; standing for <strong>Interactive</strong> Python notebook), the Jupyter notebook is, first and foremost, an interactive computing environment. It is comprised of <em>cells</em> that enable the user to write chunks of code and run them separately from the rest of the notebook. What language? You choose! The notebook is a language-agnostic frontend that runs code cells through kernels connecting it to any backend. In fact, the rename to <strong>Jupyter</strong> Notebook was in acknowledgement of this agnosticism, highlighting the three core languages (Julia, Python, and R). However, many other kernels exist (such as Matlab, Octave, Javascript, etc.); see the list here. This means, you only need to learn one interface/frontend no matter how many languages you know.</p></li>
+
+<li><p>The cells mentioned above can also be <strong>text</strong> cells, rendered by Markdown. This is a lightweight mark-up language used in many blogging circles. Its <strong>very</strong> easy to use and is explained further here. This almost makes the notebook a worthy blogging editor.</p></li>
+
+<li><p>Equations can be written in Markdown cells using Latex syntax (via MathJax). Write a latex formula between double dollars signs to render the equation.</p></li>
+
+<li><p>The notebook plots figures inline with text and code. This might be one of the most attractive features of electronic notebooks in general. To enable this feature in the Jupyter notebook, one simply needs to run the following line of code:</p>
+
+<p><code>%matplotlib inline</code></p></li>
+
+<li><p>The notebook is easy to install (site), intuitive to use, and includes many tutorials on the web. If you want example notebooks, you can flip through exampe notebooks here.</p></li>
+
+<li><p>The Jupyter notebook comes with a internal conversion API, called NBConvert. This allows you to output your notebooks as Latex/PDF documents, HTML pages, <em>interactive</em> presentation slides (through reveal.js), and stand-alone scripts.</p></li>
+
+<li><p>The Notebook can be saved into a lightweight format, called JSON, that makes sharing notebooks (even large ones) easy. If you want a notebook to be READ-ONLY, you can share the notebook using the NBViewer application online.</p></li>
+
+<li><p>There are a few different ways to run the notebook on a remote server. The stable solution is to use <strong>Jupyterhub</strong>. This allows you to set up a Jupyterhub server and allow users to connect through a password protected sign-in page (using server credentials or Github credentials).</p></li>
+
+<li><p>The Jupyterhub provides a great way to standardize your lab&rsquo;s electronic notebooks. This implementation allows multiple users on a single server. No one <em>has</em> to download the notebook or any dependencies locally on their machines. All these dependencies can be installed and loaded in one location, on a remote server, and everyone has access to the same programming environment.</p></li>
+
+<li><p>The Jupyter Notebook has a large, active community constantly improving its performance. Chances are, if any bug exists, it will be fixed immediately. If you find a point of vulnerability or annoyance, you can post an issue to the community, and it will be fixed quickly!</p></li>
+</ol>
+
+<h2 id="how-does-it-work:1474e86c3d1a98e0f9d005dde1de2301">How does it work?</h2>
+
+<p>The Jupyter notebook is an web-application and interactive programming shell. That means, the frontend is hosted in a browser, written entirely in HTML, Javascript, and CSS. This is advantageous to the notebook&rsquo;s design, providing nearly endless possibilities for future development and allowing the notebook to access libraries like MathJax (Latex rendering), D3 (data visualization library), etc. It also enables users to embed notebooks in blogs (simple HTML), share notebooks is a lightweight format (JSON data), run notebooks remotely through HTTP protocols (or the stable Jupyterhub, described below), add custom extensions easily, and build browser widgets for GUI interaction with data. Though the frontend is Javascript, the notebook server is entirely Python. This server manages the architecture of the notebook and handles all messaging between the frontend and code-executing <strong>kernel</strong>. The kernel is the main machinery for executing the code (in its native language) written by a user. Amazingly, the Jupyter team designed the Notebook such that the kernel could be any language, making the Notebook language agnostic.</p>
+
+<h2 id="above-and-beyond-more-jupyter-notebook-features:1474e86c3d1a98e0f9d005dde1de2301">Above and beyond: more Jupyter Notebook features</h2>
+
+<ol>
+<li><p><strong>Widgets</strong>: the Notebook includes many interactive widgets, like slidebars, accordians, user input, etc. that allow one to interact with plots using these GUIs. You can also easily design your own widget.</p></li>
+
+<li><p><strong>Terminal</strong>: the Notebook includes a terminal in the web-application that allows your to navigate the local filesystem using your local terminal environment. You can even launch an IPython terminal within an IPython Notebook!</p></li>
+
+<li><p><strong>VIM and Emacs Shortcuts</strong>: the notebook has two modes, edit and command mode, which allow you to quickly navigate notebook editing through shortcuts like VIM and Emacs.</p></li>
+
+<li><p><strong>Google Drive</strong>: recently, the Jupyter team integrated the Notebook with Google Drive. Now you can share and run notebooks on Google Drive using this extension.</p></li>
+</ol>
+
+        </div>
+        <section class="post-comments">
+<a class="muut" href="https://muut.com/i//comments:Reproducible%20Electronic%20Notebooks">Comments</a>
+<script src="//cdn.muut.com/1/moot.min.js"></script>
+</section>
+
+      </div>
+    </div>
+  </body>
+  
+</html>
